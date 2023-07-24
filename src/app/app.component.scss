@@ -1,0 +1,36 @@
+:root{
+   --pink-dark:rgb(242, 118, 215);
+   --pink-light:rgb(242, 167, 221);
+   --purple:rgb(230 163 229);
+   --grey-light:rgb(194, 191, 191);
+   --white:rgb(255, 255, 255);
+   --black:rgb(0, 0, 0);
+   
+}
+
+.toolbar{
+    background-color: rgb(238, 5, 188);
+}
+
+.title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+    color:white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body{
+  padding: 30px;
+
+
+
+  mat-form-field{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

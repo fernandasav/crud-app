@@ -1,0 +1,66 @@
+<div mat-dialog-title>
+    <h1>Pet Registration Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Pet Name</mat-label>
+            <input type="text"  matInput placeholder="Ex. Sugar" formControlName="petName">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Pet Owner Name</mat-label>
+            <input type="text" matInput placeholder="Ex. John Smith" formControlName="ownerName">
+          </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Pet Owner Email</mat-label>
+            <input type="email"  matInput placeholder="Ex. john@gmail.com" formControlName="ownerEmail">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="example-form-field">
+            <mat-label>Pet Date of Birth</mat-label>
+            <input matInput [matDatepicker]="datepicker" formControlName="petBirth">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-radio-group aria-label="What is your pet gender:" formControlName="petGender">
+          <mat-label>What is your pet gender:</mat-label>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="others">Others</mat-radio-button>
+          </mat-radio-group>
+    </div>
+    <div class="row">
+<mat-form-field appearance="outline" >
+  <mat-label >Animal Type</mat-label>
+  <mat-select formControlName="animalType">
+    <mat-option *ngFor="let val of animal" [value]="val">{{val}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Pet Owner Adress</mat-label>
+  <input type="adress"  matInput placeholder="Ex. Paris, France" formControlName="ownerAdress">
+</mat-form-field>
+
+    </div>
+
+</div>
+<div mat-dialog-actions class="form-button">
+    <button mat-raised-button>
+        Cancel
+    </button>
+    <button mat-raised-button style="background-color:rgb(230 163 229)" type="submit">
+        Save
+    </button>
+</div>
+</form>
